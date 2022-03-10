@@ -1,0 +1,169 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*declare variable*/
+:root{
+  --primary:#ff105f;
+  --secondary:#ffad06;
+  --light:#585d6d;
+  --third:rgb(96, 79, 124);
+  --dark:#000000;
+}
+ /*login all block hero */
+.hero{
+	height: 100vh;
+	width: 100vw;
+	/*background: var(--primary);*/
+	background-position: center;
+	background-size: cover;/*background size cover screen*/
+	position: absolute;
+}
+
+/*form box start*/
+.form-box{
+	width: 40vw;
+	height: 70%;
+	position: relative; /**/
+	margin:6% auto; /**/
+	background: #fff;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	border:2px solid gray;
+	box-shadow: 8px 9px 10px black;
+	/*background-size: cover;*/
+}
+
+/*button box started*/
+/*button register and login*/
+.button-box, .add-more-button{
+	margin:35px auto;
+	position: absolute; /**/
+	box-shadow: 0 0 20px #ff61241f; /*give box shadow on button*/
+	border-radius: 30px; 
+}
+.adminHead{
+	width: 220px;
+	margin:35px auto;
+	position: absolute;
+	text-shadow: 1px 1px var(--primary);
+}
+
+/*toggle button start*/
+
+.toggle-btn{
+	padding: 10px 30px;
+	cursor: pointer;
+	border:0;
+	outline: none;
+	position: relative;
+	border-radius: 30px;
+}
+
+/*on login page give style */
+.login{
+	/*background color maintain*/
+	background: linear-gradient(to right,#ff105f,#ffad06);
+}
+.register{
+	
+	background: linear-gradient(to left,#ff105f,#ffad06);
+}
+#btn{
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	/*border-radius: 30px;*/
+	transition: .5s
+}
+ .input-group{
+ 	top: 180px;
+ 	position: absolute;
+ 	width: 280px;
+ 	transition: .5s;
+ }
+
+ .input-group a{
+ 	text-decoration: none;
+ }
+
+ .input-field{
+ 	width: 100%;
+ 	padding: 10px 0;
+ 	margin: 5px 0;
+ 	border-left:0;
+ 	border-right: 0;
+ 	border-top: 0;
+ 	border-bottom: 1px solid #999;
+ 	outline: none;
+ 	background: transparent;
+
+ }
+
+ .submit-btn{
+ 	width: 85%;
+ 	padding: 10px 30px;
+ 	cursor: pointer;
+ 	display: block;
+ 	margin:20px;
+ 	background: linear-gradient(to right, #ff105f,#ffad06);
+ 	border:0;
+ 	outline: none;
+ 	border-radius: 30px
+ }
+
+ /*navigation start*/
+ .navigation{
+ 	height: 10vh;
+ 	background: var(--secondary)
+ }
+ nav ul li{
+ 	padding: 15px;
+ 	font-size: 25px;
+ 	display: inline-block;
+ 	list-style: none;
+ 	margin:0 50px;
+ 	align-items: center;
+ }
+ ul li a{
+ 	text-decoration: none;
+ }
+
+ .todo-box,.doing-box, .done-box{
+ 	width: 20vw;
+	height: 70%;
+	position:fixed; /**/
+	margin:2% auto; /**/
+	background: #fff;
+	border-radius: 30px;
+	/*display: flex;*/
+	/*justify-content:left;*/
+	align-items: center;
+	/*left:100px;*/
+	padding: 2px;
+	border:2px solid gray;
+	box-shadow: 8px 9px 10px var(--dark);
+ }
+
+ .add-button{
+ 	margin: 10px 0;
+ }
+
+ .todo-box{
+ 	left:100px;
+ }
+
+ .todo-box h1 , .doing-box h1, .done-box h1{
+ 	text-align: center;
+ }
+.doing-box{
+	left:35%;
+}
+
+.done-box{
+	left: 62%;
+}
