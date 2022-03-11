@@ -20,8 +20,8 @@
 
 			<?php include 'connection.php';
 			if (connectionDatabase()) {
-				$adminname = $_POST["username"];
-				$password = $_POST["password"];
+				$adminname = $_POST["adminname"];
+				$password = $_POST["adminpassword"];
 				$sql = "select * from adminlogin where username = '$adminname' and password = 'password'";
 				$result = mysqli_query($con, $sql);
 
