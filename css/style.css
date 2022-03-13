@@ -149,6 +149,12 @@
 	box-shadow: 8px 9px 10px var(--dark);
  }
 
+ .add-more-button a{
+	 text-decoration: none;
+	 color:#000000;
+ }
+ 
+
  .add-button{
  	margin: 10px 0;
  }

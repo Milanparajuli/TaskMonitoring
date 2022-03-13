@@ -19,30 +19,29 @@
 			</form>
 
 			<?php include 'connection.php';
-			if (connectionDatabase()) {
-				$adminname = $_POST["adminname"];
-				$password = $_POST["adminpassword"];
-				$sql = "select * from adminlogin where username = '$adminname' and password = 'password'";
-				$result = mysqli_query($con, $sql);
+
+			$adminname = $_POST["adminname"];
+			$password = $_POST["adminpassword"];
+			$sql = "select * from adminlogin where username = '$adminname' and password = 'password'";
+			$result = mysqli_query($con, $sql);
 
 
-				if ($row['username'] === $adminname && $row['password'] === $password) {
-					echo "login";
-					$_SESSION['username'] = $row['username'];
+			if ($row['username'] === $adminname && $row['password'] === $password) {
+				echo "login";
+				$_SESSION['username'] = $row['username'];
 
-					$_SESSION['password'] = $row['password'];
+				$_SESSION['password'] = $row['password'];
 
-					
 
-					header("Location: index.php");
 
-					exit();
-				} else {
+				header("Location: index.php");
 
-					header("Location: admin.php?error=Incorect User name or password");
+				exit();
+			} else {
 
-					exit();
-				}
+				header("Location: admin.php?error=Incorect User name or password");
+
+				exit();
 			}
 
 			?>

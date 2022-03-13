@@ -1,3 +1,6 @@
+<?php 
+include 'connection.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -22,14 +25,29 @@
 		</div>
 	</div>
 
-	<!DOCTYPE html>
 
 	<!-- <div class="hero"> -->
 	<div class="todo-box">
 		<h1>To-do</h1>
 		<hr>
+		<?php
+		$selectquery = "select * from task";
+		$result = mysqli_query($con, $selectquery);
+		if (mysqli_num_rows($result)) {
+			while ($row = mysqli_fetch_assoc($result)) {
+
+		?>
+				<h3>
+					<?php echo $row['id']; ?>) 
+					<?php echo $row['title']; ?>
+					<button type="submit">Edit</button> <button type="submit"> Delete </button></td>
+				</h3>
+		<?php
+			}
+		}
+		?>
 		<div class="add-more-button">
-			<button class="add-button"><span class="todoAddMore">Add more <i class="fas fa-plus"></i></span></button>
+			<button class="add-button" type="submit"><span class="todoAddMore"><a href="addtask.php" onclick="return header('Location:addtask.php')";> Add More  <i class="fas fa-plus"></i></a></span></button>
 		</div>
 
 	</div>

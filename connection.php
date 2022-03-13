@@ -1,16 +1,15 @@
 <?php
-
-function connectionDatabase()
-{
+    session_start();
     $server = "localhost";
     $username = "root";
     $password = "";
-    $database =  "taskMonitoring";
+    $database =  "taskmonitoring";
     $con = mysqli_connect($server, $username, $password, $database);
-    if ($con) {
-        echo "Connected";
+    if (!$con) {
+        die ("not connected".mysqli_connect_error());
+    }else{
+        // echo "connected";
     }
-}
 
 //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //         $name = $_POST["name"];

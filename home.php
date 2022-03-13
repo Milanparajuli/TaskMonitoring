@@ -18,8 +18,7 @@
 			</form>
 
 			<?php include 'connection.php';
-			if (connectionDatabase()) {
-            }
+			
 			?>
 		</div>
 	</div>
