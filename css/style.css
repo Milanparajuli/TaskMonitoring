@@ -152,6 +152,7 @@
  .add-more-button a{
 	 text-decoration: none;
 	 color:#000000;
+	 /* position: fixed; */
  }
  
 

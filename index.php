@@ -1,5 +1,13 @@
+
 <?php 
-include 'connection.php';
+session_start();
+?>
+<?php 
+include 'db/connection.php';
+// if(!session_start()){
+// 	header("Location:login.php");
+// }
+// header("Location:login.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +25,7 @@ include 'connection.php';
 			<nav>
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="#">Create Workspace</a></li>
+					<li><a href="home.php">Create Workspace</a></li>
 					<li><a href="#">Contact</a></li>
 					<li><a href="login.php">Log out</a></li>
 				</ul>
@@ -31,7 +39,12 @@ include 'connection.php';
 		<h1>To-do</h1>
 		<hr>
 		<?php
-		$selectquery = "select * from task";
+		$useridquery = "select * from task";
+		$abc =  mysqli_query($con, $useridquery);
+		$xyz = mysqli_fetch_assoc($abc);
+		$userid = $xyz['userid']; 
+
+		$selectquery = "select * from task where userid = '$userid'";
 		$result = mysqli_query($con, $selectquery);
 		if (mysqli_num_rows($result)) {
 			while ($row = mysqli_fetch_assoc($result)) {
@@ -39,15 +52,15 @@ include 'connection.php';
 		?>
 				<h3>
 					<?php echo $row['id']; ?>) 
-					<?php echo $row['title']; ?>
-					<button type="submit">Edit</button> <button type="submit"> Delete </button></td>
+					<?php echo $row['todotask']; ?>
+					
 				</h3>
 		<?php
 			}
 		}
 		?>
 		<div class="add-more-button">
-			<button class="add-button" type="submit"><span class="todoAddMore"><a href="addtask.php" onclick="return header('Location:addtask.php')";> Add More  <i class="fas fa-plus"></i></a></span></button>
+			<button class="add-button" type="submit"><span class="todoAddMore toggle-btn"><a href="addtask.php" onclick="return header('Location:addtask.php')";> Add More  <i class="fas fa-plus"></i></a></span></button>
 		</div>
 
 	</div>
@@ -58,7 +71,7 @@ include 'connection.php';
 		<h1>Doing</h1>
 		<hr>
 		<div class="add-more-button">
-			<button class="add-button"><span class="doingAddMore">Add more <i class="fas fa-plus"></i></span></button>
+			<button class="add-button"><span class="doingAddMore toggle-btn">Add more <i class="fas fa-plus"></i></span></button>
 		</div>
 
 	</div>
@@ -68,7 +81,7 @@ include 'connection.php';
 		<h1>Done</h1>
 		<hr>
 		<div class="add-more-button">
-			<button class="add-button"><span class="doneAddMore">Add more <i class="fas fa-plus"></i></span></button>
+			<button class="add-button"><span class="doneAddMore toggle-btn">Add more <i class="fas fa-plus"></i></span></button>
 		</div>
 
 	</div>
