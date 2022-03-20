@@ -174,3 +174,7 @@
 .done-box{
 	left: 62%;
 }
+
+.todoitem:hover{
+	color: gray;
+}
