@@ -1,6 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0px;
+	font-family:"Roboto",sans-serif;
 }
 /*declare variable*/
 :root{
@@ -128,8 +129,9 @@
  	list-style: none;
  	margin:0 50px;
  	align-items: center;
- }
- ul li a{
+}
+ul li a{
+	color:#fff;
  	text-decoration: none;
  }
 
@@ -177,4 +179,16 @@
 
 .todoitem:hover{
 	color: gray;
+}
+
+.task-item ul li{
+	list-style: none;
+	margin: 2px;
+	font-size: 20px;
+}
+.taskaction{
+	display: none;
+}
+.task-item:hover .taskaction{
+	display: block;
 }

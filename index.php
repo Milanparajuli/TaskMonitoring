@@ -1,6 +1,5 @@
-
-<?php 
-// session_start();
+<?php
+session_start();
 
 include 'db/connection.php';
 // if(!session_start()){
@@ -18,20 +17,34 @@ include 'db/connection.php';
 </head>
 
 <body>
+	<?php 
+	include 'combine/nav.php';
+	?>
+	
 	<!-- header start -->
-	<div class="container">
+	<!-- <div class="container">
 		<div class="navigation">
 			<nav>
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<!-- <li><a href="home.php">Create Workspace</a></li> -->
+					<li><a href="home.php">Create Workspace</a></li>
 					<li><a href="setting.php">Setting</a></li>
 					<li><a href="db/logout.php">Log out</a></li>
 					
+					<li>
+						<form action="#" method="POST">
+							<button name="submit" type="submit" style="
+						background:transparent;
+						font-size: 25px;
+						border: none;
+						color: #fff;
+					">Log out</button>
+					</li>
+
 				</ul>
 			</nav>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- <h1>Welcome <?php echo $_SESSION['useremail']; ?></h1> -->
 
@@ -44,7 +57,7 @@ include 'db/connection.php';
 		$useridquery = "select userid from task";
 		$sqlquery =  mysqli_query($con, $useridquery);
 		$dbrow = mysqli_fetch_assoc($sqlquery);
-		$userid = $dbrow['userid']; 
+		$userid = $dbrow['userid'];
 
 		$selectquery = "select * from task where userid = '$userid'";
 		$selectquery = "select * from task";
@@ -53,18 +66,26 @@ include 'db/connection.php';
 			while ($row = mysqli_fetch_assoc($result)) {
 
 		?>
-				<h3>
-					<!-- <?php echo $row['id']; ?>)  -->
-					<?php echo $row['todotask']; ?>
-					<?php echo $row['userid']; ?>
-					
-				</h3>
+				<div class="task-item">
+					<ul>
+						<li>
+							<?php echo $row['todotask']; ?>
+							<?php echo $row['userid']; ?>
+						</li>
+					</ul>
+					<div class="taskaction">
+						<button>edit</button>
+						<button>Delete</button>
+						<button>move</button>
+					</div>
+				</div>
+
 		<?php
 			}
 		}
 		?>
 		<div class="add-more-button">
-			<button class="add-button" type="submit" onclick="return header('Location:addtask.php')";><span class="todoAddMore toggle-btn"><a href="addtask.php" > Add More  <i class="fas fa-plus"></i></a></span></button>
+			<button class="add-button" type="submit" onclick="return header('Location:addtask.php')" ;><span class="todoAddMore toggle-btn"><a href="addtask.php"> Add More <i class="fas fa-plus"></i></a></span></button>
 		</div>
 
 	</div>
@@ -78,27 +99,32 @@ include 'db/connection.php';
 		$useridquery = "select userid from task";
 		$sqlquery =  mysqli_query($con, $useridquery);
 		$dbrow = mysqli_fetch_assoc($sqlquery);
-		$userid = $dbrow['userid']; 
+		$userid = $dbrow['userid'];
 
-		$selectquery = "select * from task where userid = '$userid'";
-		$selectquery = "select * from task";
+		// $selectquery = "select * from task where userid = '$userid'";
+		$selectquery = "select * from doing";
 		$result = mysqli_query($con, $selectquery);
 		if (mysqli_num_rows($result)) {
 			while ($row = mysqli_fetch_assoc($result)) {
 
 		?>
-				<h3>
-					<!-- <?php echo $row['id']; ?>)  -->
-					<?php echo $row['doingtask']; ?>
-					<!-- <?php echo $row['userid']; ?> -->
-					
-				</h3>
+				<!-- <h3> -->
+				<!-- <?php echo $row['id']; ?>)  -->
+				<!-- <?php echo $row['doingtask']; ?> -->
+				<!-- <?php echo $row['userid']; ?> -->
+
+				<!-- </h3> -->
+				<div class="task-item">
+					<ul>
+						<li><?php echo $row['doingtask']; ?></li>
+					</ul>
+				</div>
 		<?php
 			}
 		}
 		?>
 		<div class="add-more-button">
-		<button class="add-button" type="submit" onclick="return header('Location:addtask.php')";><span class="todoAddMore toggle-btn"><a href="taskdoing.php" > Add More  <i class="fas fa-plus"></i></a></span></button>
+			<button class="add-button" type="submit" onclick="return header('Location:addtask.php')" ;><span class="todoAddMore toggle-btn"><a href="taskdoing.php"> Add More <i class="fas fa-plus"></i></a></span></button>
 		</div>
 
 	</div>
@@ -111,10 +137,10 @@ include 'db/connection.php';
 		$useridquery = "select userid from task";
 		$sqlquery =  mysqli_query($con, $useridquery);
 		$dbrow = mysqli_fetch_assoc($sqlquery);
-		$userid = $dbrow['userid']; 
+		$userid = $dbrow['userid'];
 
-		$selectquery = "select * from task where userid = '$userid'";
-		$selectquery = "select * from task";
+		// $selectquery = "select * from task where userid = '$userid'";
+		$selectquery = "select * from done";
 		$result = mysqli_query($con, $selectquery);
 		if (mysqli_num_rows($result)) {
 			while ($row = mysqli_fetch_assoc($result)) {
@@ -123,15 +149,16 @@ include 'db/connection.php';
 				<h3>
 					<!-- <?php echo $row['id']; ?>)  -->
 					<?php echo $row['donetask']; ?>
+
 					<!-- <?php echo $row['userid']; ?> -->
-					
+
 				</h3>
 		<?php
 			}
 		}
 		?>
 		<div class="add-more-button">
-		<button class="add-button" type="submit" onclick="return header('Location:addtask.php')";><span class="todoAddMore toggle-btn"><a href="taskdone.php" > Add More  <i class="fas fa-plus"></i></a></span></button>
+			<button class="add-button" type="submit" onclick="return header('Location:addtask.php')" ;><span class="todoAddMore toggle-btn"><a href="taskdone.php"> Add More <i class="fas fa-plus"></i></a></span></button>
 		</div>
 
 	</div>

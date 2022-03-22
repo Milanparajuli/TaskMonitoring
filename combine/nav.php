@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -8,17 +8,17 @@
 </head>
 
 <body>
-	header start
+	<!-- header start -->
 	<div class="container">
 		<div class="navigation">
 			<nav>
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="home.php">Create Workspace</a></li>
+					<!-- <li><a href="home.php">Create Workspace</a></li> -->
 					<li><a href="#">Setting</a></li>
 					<li><a href="db/logout.php">Log out</a></li>
 					
 				</ul>
 			</nav>
 		</div>
-	</div> -->
+	</div>

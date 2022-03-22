@@ -1,7 +1,7 @@
 
 	<?php
 	session_start();
-     include 'connection.php';
+	require 'connection.php';
 		if(isset($_POST['submit'])){
 			$name = $_POST['fullname'];
 			$email = $_POST['useremail']; 
