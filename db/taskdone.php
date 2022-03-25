@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         echo "enter task";
     } else {
         // $query = "INSERT INTO done SET donetask ='$task', userid = '$userid' ";
-        $query = "INSERT INTO done SET donetask ='$task' ";
+        $query = "INSERT INTO task SET todotask ='$task',STATUS = 'done'";
         $result = mysqli_query($con, $query);
         if ($result) {
             echo "Added task";

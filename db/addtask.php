@@ -1,7 +1,8 @@
 <?php
 include 'connection.php';
 
-$sqlquery = "SELECT * FROM users";
+$id=$_GET['id'];
+$sqlquery = "SELECT * FROM task";
 $queryexecute =  mysqli_query($con, $sqlquery);
 $row = mysqli_fetch_assoc($queryexecute);
 $userid = $row['userid'];
@@ -16,7 +17,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($con, $query);
         if ($result) {
             echo "Added task";
-            header("Location:../index.php");
+            header("Location:../index.php?id=".$userid);
         } else {
             echo "Not inserted";
         }

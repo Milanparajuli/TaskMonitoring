@@ -192,3 +192,6 @@ ul li a{
 .task-item:hover .taskaction{
 	display: block;
 }
+/* .taskaction .move-class:hover .move{
+	display: block;
+} */
