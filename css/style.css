@@ -7,7 +7,7 @@
 :root{
   --primary:#ff105f;
   --secondary:#ffad06;
-  --light:#585d6d;
+  --light:#c3c6d1;
   --third:rgb(96, 79, 124);
   --dark:#000000;
 }
@@ -195,3 +195,25 @@ ul li a{
 /* .taskaction .move-class:hover .move{
 	display: block;
 } */
+.sessionend{
+	/* width: 100vw; */
+	height: 100vh;
+	background-color: var(--primary);
+}
+.not-login-msg{
+	color: var(--light);
+	position: fixed;
+	top: 40%;
+	left: 40%;
+}
+.not-login-msg a{
+	color: var(--light);
+	position: relative;
+	text-decoration: none;
+	left: 45%;
+}
+.not-login-msg a:hover{
+	color: var(--secondary);
+	font-weight: bold;
+	font-size: large;
+}
