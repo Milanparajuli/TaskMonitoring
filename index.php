@@ -48,6 +48,7 @@ include 'db/connection.php';
 				while ($row = mysqli_fetch_assoc($result)) {
 
 			?>
+
 					<div class="task-item">
 						<ul>
 							<li>
@@ -56,7 +57,8 @@ include 'db/connection.php';
 							</li>
 						</ul>
 						<?php
-						$taskid = $row['id'] ?>
+						$taskid = $row['id'];
+						?>
 						<div class="taskaction">
 							<a href="edittask.php?id=<?php echo $row["id"]; ?>">Edit</a>
 							<!-- <a href="db/deletetask.php?id=".$taskid>Delete</a> -->
@@ -73,7 +75,8 @@ include 'db/connection.php';
 
 
 			<div class="add-more-button">
-				<button class="add-button" type="submit" name="add" value="Add More"><a href="addtask.php">Add more</a></button>
+				<?php $userid = $_GET['id'];?>
+				<button class="add-button" type="submit" name="add" value="Add More"><a href="addtask.php?id=<?php echo $userid;?>">Add more</a></button>
 			</div>
 
 		</div>
