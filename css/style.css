@@ -6,8 +6,8 @@
 /*declare variable*/
 :root{
   --primary:#ff105f;
-  --secondary:#ffad06;
-  --light:#c3c6d1;
+  --secondary:#d39721;
+  --light:#f4f4f5;
   --third:rgb(96, 79, 124);
   --dark:#000000;
 }
@@ -176,7 +176,9 @@ ul li a{
 .done-box{
 	left: 62%;
 }
-
+.task-item{
+	width:200px;
+}
 .todoitem:hover{
 	color: gray;
 }
@@ -198,7 +200,7 @@ ul li a{
 .sessionend{
 	/* width: 100vw; */
 	height: 100vh;
-	background-color: var(--primary);
+	background-color: var(--secondary);
 }
 .not-login-msg{
 	color: var(--light);
@@ -213,7 +215,7 @@ ul li a{
 	left: 45%;
 }
 .not-login-msg a:hover{
-	color: var(--secondary);
+	color: var(--primary);
 	font-weight: bold;
 	font-size: large;
 }

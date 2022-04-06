@@ -4,16 +4,23 @@ include "db/connection.php";
 $userid = $_GET['id'];
 // if(isset($_GET['id'])){
 if (isset($_POST['submit'])) {
-    $task = $_POST['task'];
-
-    $sql = "INSERT INTO task values ('','$task','$userid','TODO')";
-    $result = mysqli_query($con, $sql);
-
-    if ($result) {
-        echo '<script>alert("Added succesfully")</script>';
-        header("location: index.php?id=".$userid);
+    $task = $_POST["task"];
+    if (strlen($task) > 255) {
+        echo '<script type="text/javascript">';
+        echo ' alert("You cannot add more than 255 word")';
+        echo '</script>';
     } else {
-        echo "unable to insert";
+        $task = $_POST['task'];
+
+        $sql = "INSERT INTO task values ('','$task','$userid','TODO')";
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+            echo '<script>alert("Added succesfully")</script>';
+            header("location: index.php?id=" . $userid);
+        } else {
+            echo "unable to insert";
+        }
     }
 }
 // }

@@ -7,7 +7,7 @@ require 'connection.php';
 $sqlquery = "SELECT * FROM task";
 $result = mysqli_query($con, $sqlquery);
 $row = mysqli_fetch_assoc($result);
-$userid = $row['userid'];
+$userid = $_GET['userid'];
 // echo "user id =".$userid;
 // $taskid = $_GET['id'];
 $taskid = $_GET['id'];

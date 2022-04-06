@@ -9,7 +9,7 @@ $queryexecute =  mysqli_query($con, $sqlquery);
 // if (mysqli_num_rows($queryexecute)) {
     $row = mysqli_fetch_assoc($queryexecute);
     $taskid = $_GET['id'];
-    $userid = $row['userid'];
+    $userid = $_GET['userid'];
     // echo " task id =".$taskid."userid = ".$userid;
     // while ($row) {
         $query = "UPDATE task set STATUS = 'DONE' WHERE id = '$taskid'";

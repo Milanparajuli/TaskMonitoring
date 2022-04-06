@@ -9,6 +9,7 @@ $queryexecute =  mysqli_query($con, $sqlquery);
 // if (mysqli_num_rows($queryexecute)) {
     $row = mysqli_fetch_assoc($queryexecute);
     $taskid = $_GET['id'];
+    $u = $_GET['userid'];
     $userid = $row['userid'];
     // echo " task id =".$taskid."userid = ".$userid;
     // while ($row) {
@@ -16,7 +17,7 @@ $queryexecute =  mysqli_query($con, $sqlquery);
         $result = mysqli_query($con, $query);
         if ($result) {
             // echo "Moved";
-            header("Location:../index.php?id=".$userid);
+            header("Location:../index.php?id=".$u);
         }
     // }
 // }

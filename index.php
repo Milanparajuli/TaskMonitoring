@@ -60,11 +60,11 @@ include 'db/connection.php';
 						$taskid = $row['id'];
 						?>
 						<div class="taskaction">
-							<a href="edittask.php?id=<?php echo $row["id"]; ?>">Edit</a>
+							<a href="edittask.php?id=<?php echo $row["id"]; ?>&& userid=<?php echo $row['userid'];?>">Edit</a>
 							<!-- <a href="db/deletetask.php?id=".$taskid>Delete</a> -->
-							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>">Delete</a>
-							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?>">Doing</a>
-							<a href="db/movedone.php?id=<?php echo $row["id"]; ?>">Done</a>
+							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>">Delete</a>
+							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>">Doing</a>
+							<a href="db/movedone.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>">Done</a>
 						</div>
 					</div>
 
@@ -110,10 +110,10 @@ include 'db/connection.php';
 							</li>
 						</ul>
 						<div class="taskaction">
-							<a href="edittask.php?id=<?php echo $row["id"]; ?>">Edit</a>
-							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>">Delete</a>
-							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?>">Todo</a>
-							<a href="db/movedone.php?id=<?php echo $row["id"]; ?>">Done</a>
+							<a href="edittask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid'];?>">Edit</a>
+							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid'];?>">Delete</a>
+							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid'];?>">Todo</a>
+							<a href="db/movedone.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid'];?>">Done</a>
 						</div>
 					</div>
 
@@ -154,9 +154,9 @@ include 'db/connection.php';
 						</ul>
 						<div class="taskaction">
 							<a href="edittask.php">Edit</a>
-							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>">Delete</a>
-							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?>">Todo</a>
-							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?>">Doing</a>
+							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid'];?>">Delete</a>
+							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid'];?>">Todo</a>
+							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid'];?>">Doing</a>
 						</div>
 					</div>
 
@@ -167,7 +167,8 @@ include 'db/connection.php';
 			?>
 			<div class="sessionend">
 				<div class="not-login-msg">
-					<h1>Welcome</h1>
+					<h1>Welcome,</h1>
+					<h2>Task Monitoring</h2>
 					<h2>please login first</h2>
 					<a href="login.php">Login</a>
 				</div>

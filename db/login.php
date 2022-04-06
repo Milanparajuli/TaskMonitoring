@@ -10,13 +10,15 @@
 		$result = mysqli_query($con, $query);
 		$email_count = mysqli_num_rows($result);
 		$fetch = mysqli_fetch_array($result);
-		$id = $fetch['userid'];	
+		// $id = $fetch['userid'];	
 		if ($email_count == 0) {
 			echo '<script type="text/javascript">';
-			echo ' alert("Not valid user name or password")';  //not showing an alert box.
+			echo ' alert("Not valid user name or password")'; 
 			echo '</script>';
 			header('Location:../login.php');
-		} else {
+		}
+		 else {
+			$id = $fetch['userid'];
 			// $_SESSION['fullname'] = $id;
 			header("Location:../index.php?id=" . $id);
 		}
