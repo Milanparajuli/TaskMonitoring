@@ -8,8 +8,9 @@
   --primary:#ff105f;
   --secondary:#d39721;
   --light:#f4f4f5;
-  --third:rgb(96, 79, 124);
+  --third:rgb(32, 27, 37);
   --dark:#000000;
+  --reg:rgb(22, 6, 250);
 }
  /*login all block hero */
 .hero{
@@ -61,16 +62,20 @@
 	outline: none;
 	position: relative;
 	border-radius: 30px;
+	background: linear-gradient(to left,var(--third),var(--reg));
+	color: var(--light);
+	
 }
 
 /*on login page give style */
 .login{
 	/*background color maintain*/
-	background: linear-gradient(to right,#ff105f,#ffad06);
+	background: linear-gradient(to right,var(--primary),var(--secondary));
+	color: var(--light);
 }
 .register{
 	
-	background: linear-gradient(to left,#ff105f,#ffad06);
+	background: linear-gradient(to left,var(--primary),var(--secondary));
 }
 #btn{
 	top: 0;
@@ -111,10 +116,11 @@
  	cursor: pointer;
  	display: block;
  	margin:20px;
- 	background: linear-gradient(to right, #ff105f,#ffad06);
+ 	background: linear-gradient(to right, var(--primary),var(--secondary));
  	border:0;
  	outline: none;
- 	border-radius: 30px
+ 	border-radius: 30px;
+	 color: var(--light);
  }
 
  /*navigation start*/
@@ -135,6 +141,10 @@ ul li a{
  	text-decoration: none;
  }
 
+nav ul li a:hover{
+	 color: var(--primary);
+ }
+
  .todo-box,.doing-box, .done-box{
  	width: 20vw;
 	height: 70%;
@@ -149,6 +159,10 @@ ul li a{
 	padding: 2px;
 	border:2px solid gray;
 	box-shadow: 8px 9px 10px var(--dark);
+ }
+ .user-profile{
+	 text-align: center;
+	 margin-top: 25px;
  }
 
  .add-more-button a{

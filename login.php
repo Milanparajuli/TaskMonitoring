@@ -27,7 +27,7 @@
 			<form class="input-group" method="POST" action="db/login.php">
 				<input type="email" name="useremail" class="input-field" placeholder="Enter Email" required>
 				<input type="password" name="userpassword" class="input-field" placeholder="Enter password" required>
-				<!-- <a href="#">Forgot password?</a> -->
+				<a href="#">Forgot password?</a>
 				<button type="submit" class="submit-btn"  name="submit" value="Log in">Log in</button>
 			</form>
 		</div>

@@ -15,11 +15,13 @@
 			echo '<script type="text/javascript">';
 			echo ' alert("Not valid user name or password")'; 
 			echo '</script>';
-			header('Location:../login.php');
+			// header('Location:../login.php');
 		}
 		 else {
 			$id = $fetch['userid'];
-			// $_SESSION['fullname'] = $id;
+			$fullname = $fetch['fullName'];
+			$_SESSION['fullName'] = $fullname;
+			$_SESSION['userid'] = $id;
 			header("Location:../index.php?id=" . $id);
 		}
 	} else {

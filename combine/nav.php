@@ -1,3 +1,6 @@
+<?php 
+	require "db/connection.php";
+	?>
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +16,7 @@
 		<div class="navigation">
 			<nav>
 				<ul>
-					<li><a href="index.php?id=<?php ?>">Home</a></li>
+					<li><a href="index.php?id=<?php echo $row['userid']?>">Home</a></li>
 					<!-- <li><a href="home.php">Create Workspace</a></li> -->
 					<!-- <li><a href="setting.php">Setting</a></li> -->
 					<li><a href="db/logout.php">Log out</a></li>
@@ -22,3 +25,13 @@
 			</nav>
 		</div>
 	</div>
+
+	<?php 
+	$un = $_SESSION['fullName'];
+	$query = "SELECT * FROM task";
+
+	$result = mysqli_query($con, $query);
+	
+	$row = mysqli_fetch_assoc($result);
+	$userid = $row['userid'];
+	?>
