@@ -51,24 +51,18 @@ include 'db/connection.php';
 			?>
 
 					<div class="task-item">
-						<!-- <ul>
-							<li>
-								<?php echo $row['todotask']; ?>
-								<?php echo $row['id']; ?>
-							</li>
-						</ul> -->
 						<form action="" method="post">
-						<textarea name="task" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+							<textarea name="task" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
 						</form>
 						<?php
 						$taskid = $row['id'];
 						?>
 						<div class="taskaction">
-							<a href="db/edittask.php?id=<?php echo $row["id"]; ?>&& userid=<?php echo $row['userid']; ?>">Edit</a>
+							<a href="db/edittask.php?id=<?php echo $row["id"]; ?>&& userid=<?php echo $row['userid']; ?>" class="addMore">Edit</a>
 							<!-- <a href="db/deletetask.php?id=".$taskid>Delete</a> -->
-							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>">Delete</a>
-							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>">Doing</a>
-							<a href="db/movedone.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>">Done</a>
+							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Delete</a>
+							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Doing</a>
+							<a href="db/movedone.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Done</a>
 						</div>
 					</div>
 
@@ -80,7 +74,7 @@ include 'db/connection.php';
 
 			<div class="add-more-button">
 				<?php $userid = $_GET['id']; ?>
-				<button class="add-button" type="submit" name="add" value="Add More"><a href="addtask.php?id=<?php echo $userid; ?>">Add more</a></button>
+				<a href="addtask.php?id=<?php echo $userid; ?>" class="addMore">Add more</a>
 			</div>
 
 		</div>
@@ -107,18 +101,12 @@ include 'db/connection.php';
 
 			?>
 					<div class="task-item">
-						<!-- <ul>
-							<li>
-								<?php echo $row['todotask']; ?>
-								<?php echo $row['userid']; ?>
-							</li>
-						</ul> -->
 						<textarea name="" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
 						<div class="taskaction">
-							<a href="edittask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>">Edit</a>
-							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>">Delete</a>
-							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>">Todo</a>
-							<a href="db/movedone.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>">Done</a>
+							<a href="edittask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Edit</a>
+							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Delete</a>
+							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Todo</a>
+							<a href="db/movedone.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Done</a>
 						</div>
 					</div>
 
@@ -159,10 +147,10 @@ include 'db/connection.php';
 						</ul> -->
 						<textarea name="" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
 						<div class="taskaction">
-							<a href="edittask.php">Edit</a>
-							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>">Delete</a>
-							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>">Todo</a>
-							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>">Doing</a>
+							<a href="edittask.php" class="addMore">Edit</a>
+							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Delete</a>
+							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Todo</a>
+							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Doing</a>
 						</div>
 					</div>
 

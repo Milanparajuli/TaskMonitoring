@@ -24,7 +24,7 @@
 
 /*form box start*/
 .form-box{
-	width: 40vw;
+	width: 25vw;
 	height: 70%;
 	position: relative; /**/
 	margin:6% auto; /**/
@@ -86,6 +86,15 @@
 	/*border-radius: 30px;*/
 	transition: .5s
 }
+
+.btn-text{
+	text-align: center;
+	margin-top: 10px;
+}
+.btn-text p{
+	margin-top: 10px;
+}
+
  .input-group{
  	top: 180px;
  	position: absolute;
@@ -100,7 +109,7 @@
  .input-field{
  	width: 100%;
  	padding: 10px 0;
- 	margin: 5px 0;
+ 	margin: 15px 0;
  	border-left:0;
  	border-right: 0;
  	border-top: 0;
@@ -159,6 +168,7 @@ nav ul li a:hover{
 	padding: 2px;
 	border:2px solid gray;
 	box-shadow: 8px 9px 10px var(--dark);
+	overflow: auto;
  }
  .user-profile{
 	 text-align: center;
@@ -178,6 +188,7 @@ nav ul li a:hover{
 
  .todo-box{
  	left:100px;
+	 overflow: auto;
  }
 
  .todo-box h1 , .doing-box h1, .done-box h1{
@@ -191,7 +202,8 @@ nav ul li a:hover{
 	left: 62%;
 }
 .task-item{
-	width:200px;
+	/* width:px; */
+	margin: 5px;
 }
 .todoitem:hover{
 	color: gray;
@@ -232,4 +244,20 @@ nav ul li a:hover{
 	color: var(--primary);
 	font-weight: bold;
 	font-size: large;
+}
+
+textarea{
+	margin: 5px 25px 0px 10px;
+	padding: 3px;
+}
+a.addMore{
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #aabbcc;
+	font-size: 12px;
+	background-color: #999;
+	text-align: center;
+	color: #fff;
+	border-radius: 3px;
+	text-decoration: underline;
 }
