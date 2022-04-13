@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "db/connection.php";
+require "combine/nav.php";
 $userid = $_GET['id'];
 // if(isset($_GET['id'])){
 if (isset($_POST['submit'])) {

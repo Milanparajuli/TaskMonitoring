@@ -250,14 +250,23 @@ textarea{
 	margin: 5px 25px 0px 10px;
 	padding: 3px;
 }
-a.addMore{
+a.addMore, button,input{
 	margin: 5px;
 	padding: 5px;
 	border: 2px solid #aabbcc;
 	font-size: 12px;
-	background-color: #999;
+	background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
 	text-align: center;
-	color: #fff;
+	/* color: #fff; */
+	color: -internal-light-dark(black, white);
+	border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
 	border-radius: 3px;
-	text-decoration: underline;
+	text-decoration: none;
+	text-rendering: auto;
+	border-image: initial;
+
 }
+footer div{
+	flex-basis: 50%;
+	margin: 10px 0;
+  }

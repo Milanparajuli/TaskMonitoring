@@ -51,19 +51,22 @@ include 'db/connection.php';
 			?>
 
 					<div class="task-item">
-						<form action="" method="post">
+						<form action="db/edittask.php" method="post">
 							<textarea name="task" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+							<input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+							<?php
+							$taskid = $row['id'];
+							?>
+							<div class="taskaction">
+								<!-- <a href="db/edittask.php?id=<?php echo $row["id"]; ?>&& userid=<?php echo $row['userid']; ?>&& task=<?php echo $row['todotask']; ?>" class="addMore">Edit</a> -->
+								<!-- <button >Edit</button> -->
+								<!-- <a href="db/deletetask.php?id=".$taskid>Delete</a> -->
+								<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Delete</a>
+								<a href="db/movedoing.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Doing</a>
+								<a href="db/movedone.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Done</a>
+								<input type="submit" value="Edit">
+							</div>
 						</form>
-						<?php
-						$taskid = $row['id'];
-						?>
-						<div class="taskaction">
-							<a href="db/edittask.php?id=<?php echo $row["id"]; ?>&& userid=<?php echo $row['userid']; ?>" class="addMore">Edit</a>
-							<!-- <a href="db/deletetask.php?id=".$taskid>Delete</a> -->
-							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Delete</a>
-							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Doing</a>
-							<a href="db/movedone.php?id=<?php echo $row["id"]; ?>&&userid=<?php echo $row['userid']; ?>" class="addMore">Done</a>
-						</div>
 					</div>
 
 			<?php
@@ -100,15 +103,23 @@ include 'db/connection.php';
 				while ($row = mysqli_fetch_assoc($result)) {
 
 			?>
+			<form action="db/edittask.php" method="post">
 					<div class="task-item">
-						<textarea name="" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+						<textarea name="task" id="task" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+						<input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 						<div class="taskaction">
-							<a href="edittask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Edit</a>
+							
+						
+						<!--<a href="edittask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Edit</a>
+				-->
+
 							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Delete</a>
 							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Todo</a>
 							<a href="db/movedone.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Done</a>
+						<input type="submit" value="Edit">
 						</div>
 					</div>
+			</form>
 
 			<?php
 				}
@@ -145,13 +156,17 @@ include 'db/connection.php';
 								<?php echo $row['userid']; ?>
 							</li>
 						</ul> -->
-						<textarea name="" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+						<form action="db/edittask.php" method="post">
+							<textarea name="task" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+							<input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 						<div class="taskaction">
-							<a href="edittask.php" class="addMore">Edit</a>
+							<!-- <a href="edittask.php" class="addMore">Edit</a> -->
 							<a href="db/deletetask.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Delete</a>
 							<a href="db/movetodo.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Todo</a>
 							<a href="db/movedoing.php?id=<?php echo $row["id"]; ?> && userid=<?php echo $row['userid']; ?>" class="addMore">Doing</a>
+							<input type="submit" value="Edit">
 						</div>
+						</form>
 					</div>
 
 			<?php
