@@ -15,16 +15,16 @@ if (isset($_POST['submit'])) {
         $sqlquery = "INSERT INTO users(fullname,email,password) VALUES ('$name','$email','$password')";
         $result = mysqli_query($con, $sqlquery);
         if ($result) {
-            echo '<script type="text/javascript">';
-            echo ' alert("Suseccfully registired")';
-            echo '</script>';
-
-            header("Location:../login.php");
-        } else {
-            echo '<script type="text/javascript">';
-            echo ' alert("Not registired")';
-            echo '</script>';
-        }
+            // echo '<script type="text/javascript">';
+            // echo ' alert("Suseccfully registired")';
+            // echo '</script>';
+            header('Location:../login.php?created=1');
+        } 
+        // else {
+        //     echo '<script type="text/javascript">';
+        //     echo ' alert("Not registired")';
+        //     echo '</script>';
+        // }
     }
 }
 ?>

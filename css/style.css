@@ -250,12 +250,12 @@ textarea{
 	margin: 5px 25px 0px 10px;
 	padding: 3px;
 }
-a.addMore, button,input{
+a.addMore, button, input{
 	margin: 5px;
 	padding: 5px;
 	border: 2px solid #aabbcc;
 	font-size: 12px;
-	background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+	background-color:(rgb(239, 239, 239), rgb(59, 59, 59));
 	text-align: center;
 	/* color: #fff; */
 	color: -internal-light-dark(black, white);

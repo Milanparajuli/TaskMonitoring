@@ -3,16 +3,16 @@ session_start();
 
 include 'db/connection.php';
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
-	<title>Task Monitoring</title>
+	<title>Task Monitoring</title> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://kit.fontawesome.com/40dcf4bea1.js" crossorigin="anonymous"></script>
-</head>
+<!-- </head> -->
 
-<body>
+<!-- <body> -->
 	<?php
 
 	?>
@@ -190,6 +190,6 @@ include 'db/connection.php';
 		</div> -->
 
 		</div>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

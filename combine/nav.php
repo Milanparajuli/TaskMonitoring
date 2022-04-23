@@ -27,7 +27,7 @@
 		<div class="navigation">
 			<nav>
 				<ul>
-					<li><a href="index.php?id=<?php $userid?>">Home</a></li>
+					<li><a href="index.php?id=<?php echo $userid?>">Home</a></li>
 					<!-- <li><a href="home.php">Create Workspace</a></li> -->
 					<!-- <li><a href="setting.php">Setting</a></li> -->
 					<li><a href="db/logout.php">Log out</a></li>
