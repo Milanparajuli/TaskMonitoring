@@ -1,6 +1,6 @@
 <footer>
       <div>
-        copyright &copy; Milan Parajuli <span id="getYear"></span>
+        copyright &copy; <a href="https://milanparajuli.com.np/" style="text-decoration: none;">Milan Parajuli</a> <span id="getYear"></span>
         <script>
           document.getElementById("getYear").innerText = new Date().getFullYear();
         </script>
