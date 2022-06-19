@@ -1,18 +1,12 @@
+<div class="allContent">
 <?php
 session_start();
 
 include 'db/connection.php';
 ?>
-<!-- <!DOCTYPE html>
-<html>
 
-<head>
-	<title>Task Monitoring</title> -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="https://kit.fontawesome.com/40dcf4bea1.js" crossorigin="anonymous"></script>
-<!-- </head> -->
 
-<!-- <body> -->
 <?php
 if (isset($_GET['id'])) {
 	include 'combine/nav.php';
@@ -22,7 +16,7 @@ if (isset($_GET['id'])) {
 	}
 ?>
 
-
+<div class="container">
 	<div class="user-profile">
 		<h1>Welcome,</h1>
 		<h3><?php echo $_SESSION['fullName']; ?></h3>
@@ -49,7 +43,7 @@ if (isset($_GET['id'])) {
 
 				<div class="task-item">
 					<form action="db/edittask.php" method="post">
-						<textarea name="task" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+						<textarea name="task" id="" cols="" rows="" class="text-primary"><?php echo $row['todotask']; ?></textarea>
 						<input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 						<?php
 						$taskid = $row['id'];
@@ -102,7 +96,7 @@ if (isset($_GET['id'])) {
 		?>
 				<form action="db/edittask.php" method="post">
 					<div class="task-item">
-						<textarea name="task" id="task" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+						<textarea name="task" id="task" cols="" rows="" class="text-primary"><?php echo $row['todotask']; ?></textarea>
 						<input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 						<div class="taskaction">
 
@@ -154,7 +148,7 @@ if (isset($_GET['id'])) {
 							</li>
 						</ul> -->
 					<form action="db/edittask.php" method="post">
-						<textarea name="task" id="" cols="" rows=""><?php echo $row['todotask']; ?></textarea>
+						<textarea name="task" id="" cols="" rows="" class="text-primary"><?php echo $row['todotask']; ?></textarea>
 						<input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
 						<div class="taskaction">
 							<!-- <a href="edittask.php" class="addMore">Edit</a> -->
@@ -171,13 +165,20 @@ if (isset($_GET['id'])) {
 		}
 	} else {
 		?>
+			<div class="hero">
+		<div class="form-box">
+			
 		<div class="sessionend">
 			<div class="not-login-msg">
 				<h1>Welcome,</h1>
 				<h2>Task Monitoring</h2>
-				<h2>please login first</h2>
-				<a href="login.php">Login</a>
+				<h2 style="margin-bottom: 25px;">please login first</h2>
+				<a href="login.php" style="font-size: 40px;">Login</a>
 			</div>
+
+			
+		</div>
+	</div>
 		</div>
 	<?php
 	}
@@ -187,3 +188,10 @@ if (isset($_GET['id'])) {
 		</div> -->
 
 	</div>
+</div>
+	<div class="foot">
+	<?php 
+	include 'combine/footer.php';
+	?>
+	</div>
+</div>
