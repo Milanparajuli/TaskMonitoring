@@ -183,15 +183,5 @@ if (isset($_GET['id'])) {
 	<?php
 	}
 	?>
-	<!-- <div class="add-more-button">
-			<button class="add-button" type="submit" onclick="return header('Location:addtask.php')" ;><span class="todoAddMore toggle-btn"><a href="taskdone.php"> Add More <i class="fas fa-plus"></i></a></span></button>
-		</div> -->
 
 	</div>
-</div>
-	<div class="foot">
-	<?php 
-	include 'combine/footer.php';
-	?>
-	</div>
-</div>

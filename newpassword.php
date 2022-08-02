@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="https://kit.fontawesome.com/40dcf4bea1.js" crossorigin="anonymous"></script>
 
-
 <div class="hero">
 	<div class="form-box">
 		<div class="button-box">
@@ -11,10 +10,16 @@
 
 		</div>
 
-		<form class="input-group" method="POST" action="db/changePassword.php">
+		<form class="input-group" method="post" action="db/changePassword.php">
+		<?php
+			if (isset($_GET['created'])) {
+				$msg = "Password changed sucessfully";
+				echo '<p style="color: green;">' . $msg . '</p>';
+			}
+			?>
 			<input type="password" name="userpassword" class="input-field" placeholder="Enter new password" required>
-			<input type="password" name="repassword" class="input-field" placeholder="Enter conform password" required>
-			<a href="login.php"><button type="button" class="toggle-btn">Submit</button></a>
+			<input type="text" name="otp" class="input-field" placeholder="Enter OTP" required>
+			<button type="submit" class="toggle-btn" name="submit" value="Submit">Submit</button>
 			<a href="forgotpassword.php"><button type="button" class="toggle-btn">Cancel</button></a>
 		</form>
 	</div>

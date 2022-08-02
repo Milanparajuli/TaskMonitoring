@@ -1,11 +1,16 @@
-<!-- <?php
+<h1>Hello world</h1>
+<?php
 require 'connection.php';
+if (isset($_POST['submit'])) {
+    $password = md5($_POST['userpassword']);
+    $otp = $_POST['otp'];
 
-$userid = 1;
+    $updateQuery = "UPDATE users SET password = '$password' , otp = 0 WHERE otp = '$otp' ";
+    $result = mysqli_query($con, $updateQuery);
 
-// $sqlquery = "UPDATE user set password = '$pass' WHERE otp = ";
+    if ($result) {
+        header('Location:../newpassword.php?created=1');
+    }
+}
 
-$queryexecute =  mysqli_query($con, $sqlquery);
 ?>
-
- -->
