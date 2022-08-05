@@ -15,7 +15,7 @@
  /*login all block hero */
 
 body{
-	background-color: var(--primary)
+	/* background-color: var(--primary) */
 	/* background-image: url(../images/banner.jpg);
 	background-size: cover; */
 
@@ -169,7 +169,7 @@ nav ul li a:hover{
 	margin:2%; /**/
 	background: var(--light);
 	border-radius: 30px;
-	color: var(--primary);
+	color: var(--dark);
 	display: block;
 	align-items: center;
 	/*left:100px;*/
@@ -179,11 +179,11 @@ nav ul li a:hover{
 	overflow: auto;
  }
  .text-primary{
-	color: var(--primary);
+	color: var(--dark);
  }
  .user-profile{
 	 text-align: center;
-	 color: var(--light);
+	 color: var(--dark);
 	 margin-top: 25px;
  }
 

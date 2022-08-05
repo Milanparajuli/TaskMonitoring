@@ -16,6 +16,10 @@
 				$msg = "Password changed sucessfully";
 				echo '<p style="color: green;">' . $msg . '</p>';
 			}
+			if (isset($_GET['notcreated'])) {
+				$msg = "not match otp";
+				echo '<p style="color: red;">' . $msg . '</p>';
+			}
 			?>
 			<input type="password" name="userpassword" class="input-field" placeholder="Enter new password" required>
 			<input type="text" name="otp" class="input-field" placeholder="Enter OTP" required>
